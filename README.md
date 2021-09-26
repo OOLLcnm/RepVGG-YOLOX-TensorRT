@@ -4,9 +4,30 @@
 
 
 可先将pth转换成ONNX模型再使用
-[TensorRT_cpp](https://github.com/shouxieai/tensorRT_cpp)进行GPU端部署，在RTX3060上有800FPS。
+[TensorRT_cpp](https://github.com/shouxieai/tensorRT_cpp)进行GPU端部署，在RTX3060上YOLOX-S-Rep的inference速度为1.1ms。
 
-## Start
+-----------
+
+
+### 参数/计算量对比
+|  Model   | Parameter  | GFLOPs |
+|  :----:  | :----:     | :----: |
+| YOLOX   | 8.94M      | 26.64   |
+| YOLOX-Rep   | 9.14M     | 27.79|
+| YOLOX-Rep-Deploy   | **8.70M**     | **26.00**|
+
+<br>
+
+### TensorRT / Pytorch速度对比
+|  Model   | FP32  | FP16 | INT8| Pytorch(FP16)
+|  :----:  | :----:     | :----: |:----: |:----: |
+| YOLOX   | 4.48ms / 223|1.81ms / 552|1.28ms / 778 |6.01ms / x
+| YOLOX-Rep-Deploy   |**4.38ms / 228**|**1.54ms / 650**|1.10ms / 907 | 5.59ms /x
+
+
+--------------------------
+
+## Start(#TODO)
 Step1. 安装 YOLOX
 ```shell
 见[YOLOX](https://github.com/MegEngine/YOLOX)
