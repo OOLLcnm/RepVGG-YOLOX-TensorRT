@@ -1,4 +1,4 @@
-# 深度学习 狗都不学
+# 汽车人，变形！
 
 将[YOLOX](https://github.com/MegEngine/YOLOX)中的3✖3Conv和BottleNeck换成了[RepVGG](https://github.com/DingXiaoH/RepVGG)中提出的结构重参数化Conv。
 
